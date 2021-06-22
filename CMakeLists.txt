@@ -12,6 +12,10 @@ else()
   set(projectname UaR_OpenGL)
 endif(SRC)
 
+#SET(CMAKE_CXX_COMPILER "gcc")
+#SET(CMAKE_C_COMPILER "gcc")
+SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -stdlib=libc++")
+
 project(${projectname})
 set( EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/bin )
 
@@ -98,10 +102,6 @@ endif(APPLE)
 #link_directories(${GLFW_BINARY_DIR})
 #target_link_libraries(${target} glfw ${GLFW_LIBRARIES} ${GLEW_LIBRARY} )# ${GLUT_LIBRARY} ${OPENGL_LIBRARY})
 
-SET(CMAKE_CXX_COMPILER "clang++")
-SET(CMAKE_C_COMPILER "clang")
-SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
-SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -stdlib=libc++")
 
 get_property(dirs DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY LINK_DIRECTORIES)
 foreach(dir ${dirs})
