@@ -3,9 +3,9 @@
  *
  *       Filename:  xExtensions.cpp
  *
- *    Description:  using glew to get extensions 
+ *    Description:  using glew to get extensions
  *
- *                -- its a good idea to #define GLEW_STATIC 
+ *                -- its a good idea to #define GLEW_STATIC
                         unless you are dynamically linking to glew
  *                -- including glew will automatically include OpenGL
  *                -- include <stidlib.h> first to avoid errors on windows machines
@@ -57,7 +57,7 @@
     }
 
    //2. Get OpenGL Version String and GLSL Version string
-   const GLubyte * p = glGetString(GL_VERSION); 
+   const GLubyte * p = glGetString(GL_VERSION);
    cout << "Graphics Driver: " << p << endl;
 
    const GLubyte * q = glGetString(GL_SHADING_LANGUAGE_VERSION);
@@ -72,4 +72,4 @@
    }
 
    return 0;
- }    
+ }
