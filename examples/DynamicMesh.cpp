@@ -223,7 +223,7 @@ struct MyApp : public App{
     //Bind Buffer itself before Substituting Data on it
 	glBindBuffer(GL_ARRAY_BUFFER, bufferID);
     glBufferSubData( GL_ARRAY_BUFFER, 0, vertices.size() * sizeof(Vertex), vertices.data() );
-	glDrawElements(GL_LINE_STRIP, indices.size(), GL_UNSIGNED_SHORT, 0);
+	glDrawElements(GL_LINE_STRIP, indices.size(), GL_UNSIGNED_SHORT, indices.data());
 
 
     for (int i=0;i<w;++i){
@@ -235,7 +235,7 @@ struct MyApp : public App{
     }
 
     glBufferSubData(GL_ARRAY_BUFFER, 0, vertices.size() * sizeof(Vertex), vertices.data() );
-    glDrawElements(GL_TRIANGLE_STRIP, indices.size(), GL_UNSIGNED_SHORT, 0);
+    glDrawElements(GL_TRIANGLE_STRIP, indices.size(), GL_UNSIGNED_SHORT, indices.data());
 
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
       
